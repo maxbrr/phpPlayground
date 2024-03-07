@@ -5,9 +5,9 @@ use App\Http\Request;
 use App\Core\Debug;
 
 class SettingsController extends BaseController {
-  private array $data;
-
   public function __construct(Request $request) {
+    $this->viewName = 'Settings';
+    
     $this->data = [
       'pageTitle' => 'Settings',
       'userName' => 'Prismo',
@@ -18,13 +18,5 @@ class SettingsController extends BaseController {
       ]
     ];
   }
-
-  public function serveSettings() {
-    $content = $this->renderView('Settings', $this->data);
-    return $content;
-  }
-
-  public function setData(array $data) {
-    $this->data = $data;
-  }
+  
 }

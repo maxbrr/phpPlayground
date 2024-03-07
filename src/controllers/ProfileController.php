@@ -5,9 +5,10 @@ use App\Http\Request;
 use App\Core\Debug;
 
 class ProfileController extends BaseController {
-  private array $data;
 
   public function __construct(Request $request) {
+    $this->viewName = 'Profile';
+
     $this->data = [
       'pageTitle' => 'Profile',
       'userName' => 'Prismo',
@@ -19,12 +20,4 @@ class ProfileController extends BaseController {
     ];
   }
 
-  public function serveProfile() {
-    $content = $this->renderView('Profile', $this->data);
-    return $content;
-  }
-
-  public function setData(array $data) {
-    $this->data = $data;
-  }
 }

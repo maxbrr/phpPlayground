@@ -5,10 +5,13 @@ use App\Core\Debug;
 
 
 abstract class BaseController {
-  protected function renderView(string $viewName, array $data): string {
+  protected array $data;
+  protected string $viewName;
+
+  public function renderView(): string {
     ob_start();
-    extract($data);
-    require __DIR__ . "\\..\\views\\$viewName.view.php";
+    extract($this->data);
+    require __DIR__ . "\\..\\views\\$this->viewName.view.php";
     return ob_get_clean();
   }
 }

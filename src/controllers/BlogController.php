@@ -4,9 +4,10 @@ namespace App\Controllers;
 use App\Http\Request;
 
 class BlogController extends BaseController {
-  private array $data;
-
+  
   public function __construct(Request $request) {
+    $this->viewName = 'Blog';
+
     $this->data = [
       'pageTitle' => 'Blog',
       'userName' => 'Prismo',
@@ -16,8 +17,4 @@ class BlogController extends BaseController {
     ];
   }
 
-  public function serveBlog() {
-    $content = $this->renderView('Blog', $this->data);
-    return $content;
-  }
 }
