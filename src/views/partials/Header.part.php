@@ -30,8 +30,11 @@
   <div id="login-btn"></div>
 </div>
 <div id="container">
-  <form action="POST" id="login-form">
-    <input type="text" placeholder="E-Mail...">
-    <input type="password" placeholder="Password...">
-    <button type="submit">Login</button>
+  <form action="/auth/login" method="POST" id="login-form">
+    <input type="text" name="email" placeholder="E-Mail...">
+    <input type="password" name="password" placeholder="Password...">
+    <div id="btn-container">
+      <button type="submit">Login</button>
+      <a href="/signup">signup</a>
+    </div>
   </form>

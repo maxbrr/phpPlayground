@@ -6,6 +6,8 @@ use App\Core\Debug;
 
 class SettingsController extends BaseController {
   public function __construct(Request $request) {
+    parent::__construct($request);
+    
     $this->viewName = 'Settings';
     
     $this->data = [

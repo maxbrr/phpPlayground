@@ -33,4 +33,12 @@ class Router {
       'requiresLogin' => $requiresLogin
     ];
   }
+
+  public function post(string $path, string $className, string $action, bool $requiresLogin) {
+    $this->routes['POST'][$path] = [
+      'className' => $className,
+      'action' => $action,
+      'requiresLogin' => $requiresLogin
+    ];
+  }
 }

@@ -7,12 +7,14 @@ class Request {
   private string $requestUri;
   private array $headers;
   private array $queryParams;
+  private array $postBody;
 
   public function __construct() {
     $this->requestMethod = $_SERVER['REQUEST_METHOD'];
     $this->requestUri = $_SERVER['REQUEST_URI'];
     $this->headers = getallheaders();
     $this->queryParams = $_GET;
+    $this->postBody = $_POST;
   }
 
   public function getRequestMethod(): string {
@@ -33,5 +35,9 @@ class Request {
 
   public function getQueryParams() {
     return $this->queryParams();
+  }
+
+  public function getPostBody() {
+    return $this->postBody;
   }
 }

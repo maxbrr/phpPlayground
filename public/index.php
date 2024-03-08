@@ -8,6 +8,8 @@ use App\Core\Router;
 use App\Core\Dispatcher;
 use App\Views\ViewGenerator;
 
+// set environment variables
+require __DIR__ . '/../config/initEnv.php';
 // create request instance
 $request = new Request();
 // require router instance

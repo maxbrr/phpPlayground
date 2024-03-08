@@ -7,6 +7,8 @@ use App\Core\Debug;
 class HomeController extends BaseController {
 
   public function __construct(Request $request) {
+    parent::__construct($request);
+
     $this->viewName = 'Home';
 
     $this->data = [
