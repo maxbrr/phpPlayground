@@ -11,7 +11,7 @@ use App\Views\ViewGenerator;
 // create request instance
 $request = new Request();
 // require router instance
-$router = require __DIR__ . '/../src/core/initRouter.php';
+$router = require __DIR__ . '/../config/initRouter.php';
 // pass request to router // array with handling information is returned
 $handler = $router->getHandler($request) ?? null;
 if(!$handler) {
